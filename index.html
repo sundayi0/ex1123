@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문 및 신청서 안내</title>
+    <style>
+        /* 기본 초기화 및 폰트 설정 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 상단 내비게이션 바 */
+        header {
+            background-color: #1e293b;
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ffffff;
+        }
+        /* 내비게이션 바 내 새창 버튼 스타일 */
+        .nav-btn {
+            background-color: #3b82f6;
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background-color 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #2563eb;
+        }
+
+        /* 메인 컨테이너 */
+        main {
+            max-width: 900px;
+            margin: 32px auto;
+            padding: 0 20px;
+        }
+
+        /* 안내 및 새창 열기 배너 카드 */
+        .info-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .info-text h1 {
+            font-size: 1.35rem;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .info-text p {
+            font-size: 0.92rem;
+            color: #64748b;
+        }
+        .external-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #0f172a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .external-link-btn:hover {
+            background-color: #334155;
+        }
+
+        /* 구글 폼 임베디드 영역 */
+        .form-wrapper {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            padding-top: 12px;
+        }
+        .form-wrapper iframe {
+            width: 100%;
+            height: 1100px; /* 폼 길이에 따라 조절 가능 */
+            border: none;
+            display: block;
+        }
+
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* 모바일 화면 대응 */
+        @media (max-width: 640px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 14px 20px;
+                gap: 12px;
+            }
+            .info-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .external-link-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .form-wrapper iframe {
+                height: 1250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 내비게이션 바 -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">온라인 폼 포털</a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">홈</a></li>
+                <li><a href="#form-section">폼 작성하기</a></li>
+                <!-- 새 창으로 열기 링크 -->
+                <li>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScH5o6WwSGICPSgkIrKIcFGGbjdjITd6hi0eYkvtiw_Z8mWfw/viewform?usp=header" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="nav-btn">
+                       새 창으로 열기 ↗
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main>
+        <!-- 상단 안내 및 직접 링크 카드 -->
+        <section class="info-card">
+            <div class="info-text">
+                <h1>온라인 설문 및 제출 양식</h1>
+                <p>아래 양식에서 바로 작성하시거나, 화면이 작을 경우 새 창에서 열어 작성해 주세요.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScH5o6WwSGICPSgkIrKIcFGGbjdjITd6hi0eYkvtiw_Z8mWfw/viewform?usp=header" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="external-link-btn">
+               구글 폼 새 창으로 열기 ↗
+            </a>
+        </section>
+
+        <!-- 구글 폼 임베디드 컨테이너 -->
+        <section id="form-section" class="form-wrapper">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLScH5o6WwSGICPSgkIrKIcFGGbjdjITd6hi0eYkvtiw_Z8mWfw/viewform?embedded=true" 
+                title="구글 폼 양식"
+                loading="lazy">
+                로드 중…
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 GitHub Pages Web Portal</p>
+    </footer>
+
+</body>
+</html>
